@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<!-- Page Heading -->
+<h1 class="my-4">
+</h1>
+
+{% for topico in object_list %}
+<div class="row">
+	<div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
+		<div class="card h-100">
+			<div class="card-body">
+				<h4 class="card-title">
+					<a href="{{ topico.get_absolute_url }}">{{ topico.titulo }}</a>
+				</h4>
+			</div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<!-- /.row -->
+
+<!-- Pagination -->
+ <ul class="pagination justify-content-center">
+ 	{% if page_obj.has_previous %}
+    <li class="page-item">
+     <a class="page-link" href="?page={{ page_obj.previous_page_number }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}" aria-label="Previous">
+       <span aria-hidden="true">&laquo;</span>
+       <span class="sr-only">Previous</span>
+     </a>
+   	</li>
+   	{% endif %}
+   {% for page in paginator.page_range %}
+   <li class="page-item">
+     <a class="page-link" href="?page={{ page }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}" title="">{{ page }}</a>
+   </li>
+   {% endfor %}
+   {% if page_obj.has_next %}
+   <li class="page-item">
+     <a class="page-link" href="?page={{ page_obj.next_page_number }}{% if request.GET.order %}&order={{ request.GET.order }}{% endif %}"" aria-label="Next">
+       <span aria-hidden="true">&raquo;</span>
+       <span class="sr-only">Next</span>
+     </a>
+   </li>
+   {% endif %}
+ </ul>
+
+{% endblock %}

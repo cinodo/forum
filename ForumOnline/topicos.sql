@@ -1,0 +1,6 @@
+INSERT INTO forum_topico (id, titulo, texto, slug) VALUES (1, 'História', 'História é a ciência que estuda o ser humano e sua ação no tempo e no espaço concomitantemente à análise de processos e eventos ocorridos no passado.', 'historia');
+INSERT INTO forum_topico (id, titulo, texto, slug) VALUES (2, 'Matemática', 'A ciência do raciocínio lógico e abstrato, que estuda quantidades, medidas, espaços, estruturas, variações e estatísticas.', 'matematica');
+INSERT INTO forum_topico (id, titulo, texto, slug) VALUES (3, 'Física', 'É a ciência que estuda a natureza e seus fenômenos em seus aspectos mais gerais. Analisa suas relações e propriedades, além de descrever e explicar a maior parte de suas consequências.', 'fisica');
+INSERT INTO forum_topico (id, titulo, texto, slug) VALUES (4, 'Português', 'É uma língua românica flexiva originada no galego-português falado no Reino da Galiza e no norte de Portugal.', 'portugues');
+INSERT INTO forum_topico (id, titulo, texto, slug) VALUES (6, 'Biologia', 'É a ciência que estuda os seres vivos. Debruça a origem, evolução e o funcionamento dinâmico dos organismos desde uma escala molecular subcelular até o nível populacional e interacional, tanto intraespecífica quanto interespecificamente.', 'biologia');
+

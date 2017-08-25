@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<!-- Page Heading -->
+<h1 class="my-4">{{  object.titulo }}</h1>
+
+<div class="row">  
+<div class="card h-100">
+	<div class="card-body">
+		{{  object.texto }}
+	</div>
+</div>
+</div>
+<h1 class="my-4">Mensagens</h1>
+
+{% for mensagem in object.mensagens.all %}
+<div class="row">  
+    <div class="card h-100">
+      <div class="card-body">      
+        <p class="card-text">
+        	<a href="{{ mensagem.get_absolute_url }}"> 
+        		<h4> <strong> {{ mensagem.autor }} </strong>disse:<h4> {{ mensagem.texto }}
+        	</a>    
+        </p>
+      </div>
+    </div>  
+</div>
+<br/>
+{% endfor %}
+<div class="row">
+    <div class="card h-100">
+      <div class="card-body">
+      <form method="post" id="add_comment">
+          <fieldset>
+              {% csrf_token %}
+              {% for field in form %}
+              <div>
+                  {{ field.label_tag }}
+                  {{ field }}
+                  {{ field.errors }}
+              </div>
+              {% endfor %}
+              <div>
+                  <button type="submit" >Enviar</button>
+              </div>
+          </fieldset>
+      </form>
+      </div>
+    </div>
+</div>
+<!-- /.row -->
+{% endblock %}
